@@ -1,0 +1,53 @@
+{
+  "name": "kharysharpe/laravel-json-api-resource",
+  "description": "Laravel JSON API Resource",
+  "keywords": [
+    "kharysharpe",
+    "laravel-json-api-resource"
+  ],
+  "homepage": "https://github.com/kharysharpe/laravel-json-api-resource",
+  "license": "MIT",
+  "type": "library",
+  "authors": [
+    {
+      "name": "Khary Sharpe",
+      "email": "kharysharpe@gmail.com",
+      "role": "Developer"
+    }
+  ],
+  "require": {
+    "php": "^7.1",
+    "illuminate/support": "5.8.*"
+  },
+  "require-dev": {
+    "orchestra/testbench": "3.8.*",
+    "phpunit/phpunit": "^7.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "Kharysharpe\\LaravelJsonApiResource\\": "src"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Kharysharpe\\LaravelJsonApiResource\\Tests\\": "tests"
+    }
+  },
+  "scripts": {
+    "test": "vendor/bin/phpunit",
+    "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
+  },
+  "config": {
+    "sort-packages": true
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "Kharysharpe\\LaravelJsonApiResource\\LaravelJsonApiResourceServiceProvider"
+      ],
+      "aliases": {
+        "LaravelJsonApiResource": "Kharysharpe\\LaravelJsonApiResource\\LaravelJsonApiResourceFacade"
+      }
+    }
+  }
+}

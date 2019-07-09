@@ -1,2 +1,57 @@
-# laravel-json-api-resource
-Laravel JSON API Resource
+# Proof of concept
+
+Needs refactoring and tests, pull requests welcomed.
+
+# Very short description of the package
+
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/kharysharpe/laravel-json-api-resource.svg?style=flat-square)](https://packagist.org/packages/kharysharpe/laravel-json-api-resource)
+[![Build Status](https://img.shields.io/travis/kharysharpe/laravel-json-api-resource/master.svg?style=flat-square)](https://travis-ci.org/kharysharpe/laravel-json-api-resource)
+[![Quality Score](https://img.shields.io/scrutinizer/g/kharysharpe/laravel-json-api-resource.svg?style=flat-square)](https://scrutinizer-ci.com/g/kharysharpe/laravel-json-api-resource)
+[![Total Downloads](https://img.shields.io/packagist/dt/kharysharpe/laravel-json-api-resource.svg?style=flat-square)](https://packagist.org/packages/kharysharpe/laravel-json-api-resource)
+
+This is where your description should go. Try and limit it to a paragraph or two, and maybe throw in a mention of what PSRs you support to avoid any confusion with users and contributors.
+
+## Installation
+
+You can install the package via composer:
+
+```bash
+composer require kharysharpe/laravel-json-api-resource
+```
+
+## Usage
+
+```php
+// Usage description here
+```
+
+### Testing
+
+```bash
+composer test
+```
+
+### Changelog
+
+Please see [CHANGELOG](CHANGELOG.md) for more information what has changed recently.
+
+## Contributing
+
+Please see [CONTRIBUTING](CONTRIBUTING.md) for details.
+
+### Security
+
+If you discover any security related issues, please email kharysharpe@gmail.com instead of using the issue tracker.
+
+## Credits
+
+- [Khary Sharpe](https://github.com/kharysharpe)
+- [All Contributors](../../contributors)
+
+## License
+
+The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
+
+## Laravel Package Boilerplate
+
+This package was generated using the [Laravel Package Boilerplate](https://laravelpackageboilerplate.com).
