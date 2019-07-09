@@ -1,6 +1,6 @@
 # Proof of concept
 
-Needs refactoring and tests, pull requests welcomend.
+Needs refactoring and tests, pull requests welcomed.
 
 # Very short description of the package
 
