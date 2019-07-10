@@ -1,6 +1,6 @@
 # Proof of concept
 
-Needs refactoring and tests, pull requests welcomed.
+Proof of concept. Needs refactoring and tests, pull requests welcomed.
 
 # Very short description of the package
 
@@ -9,7 +9,7 @@ Needs refactoring and tests, pull requests welcomed.
 [![Quality Score](https://img.shields.io/scrutinizer/g/kharysharpe/laravel-json-api-resource.svg?style=flat-square)](https://scrutinizer-ci.com/g/kharysharpe/laravel-json-api-resource)
 [![Total Downloads](https://img.shields.io/packagist/dt/kharysharpe/laravel-json-api-resource.svg?style=flat-square)](https://packagist.org/packages/kharysharpe/laravel-json-api-resource)
 
-This is where your description should go. Try and limit it to a paragraph or two, and maybe throw in a mention of what PSRs you support to avoid any confusion with users and contributors.
+This is a drop in replacement for Laravel API Resource that produces JSON API response as per specification (https://jsonapi.org/).
 
 ## Installation
 
@@ -21,9 +21,101 @@ composer require kharysharpe/laravel-json-api-resource
 
 ## Usage
 
-```php
-// Usage description here
+Pre-made example
+https://github.com/kharysharpe/laravel-json-api-resource-example
+
+From scratch
+
 ```
+laravel new json-server
+cd json-server
+composer require kharysharpe/laravel-json-api-resource
+```
+
+routes/api.php
+
+```php
+<?php
+
+Route::get('/users', 'UserController@index');
+Route::get('/users/{id}', 'UserController@show');
+```
+
+app/Http/Controllers/UserController.php
+
+```php
+<?php
+
+namespace App\Http\Controllers;
+
+use App\User;
+use App\Http\Resource\UserCollection;
+use App\Http\Resource\UserResource;
+
+class UserController extends Controller
+{
+    public function index()
+    {
+        $user = User::all();
+
+        return new UserCollection($user);
+    }
+
+    public function show($id)
+    {
+        $user = User::find($id);
+
+        return new UserResource($user);
+    }
+}
+```
+
+app/Http/Resource/UserResource.php
+
+```php
+<?php
+
+namespace App\Http\Resource;
+
+use Kharysharpe\LaravelJsonApiResource\Http\Resource\JsonApi\Resource;
+
+class UserResource extends Resource
+{
+    //
+}
+```
+
+app/Http/Resource/UserCollection.php
+
+```php
+<?php
+
+namespace App\Http\Resource;
+
+use Kharysharpe\LaravelJsonApiResource\Http\Resource\JsonApi\ResourceCollection;
+
+class UserCollection extends ResourceCollection
+{
+    protected $resourceItemClass = UserResource::class;
+}
+```
+
+Prepare the database (Don't forget to add data to the user table)
+
+```
+php artisan migrate
+```
+
+Start your laravel application
+
+```
+php artisan serve
+```
+
+Visit
+
+- http://127.0.0.1:8000/api/users
+- http://127.0.0.1:8000/api/users/1
 
 ### Testing
 
@@ -51,7 +143,3 @@ If you discover any security related issues, please email kharysharpe@gmail.com 
 ## License
 
 The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
-
-## Laravel Package Boilerplate
-
-This package was generated using the [Laravel Package Boilerplate](https://laravelpackageboilerplate.com).
