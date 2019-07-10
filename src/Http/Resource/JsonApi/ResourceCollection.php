@@ -9,6 +9,7 @@ use Illuminate\Pagination\AbstractPaginator;
 class ResourceCollection extends JsonResourceCollection
 {
     protected $resourceItemClass = null;
+    protected $related = [];
     protected $paginate = false;
 
     public function toArray($request)
