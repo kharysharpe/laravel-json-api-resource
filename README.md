@@ -9,7 +9,7 @@ Proof of concept. Needs refactoring and tests, pull requests welcomed.
 [![Quality Score](https://img.shields.io/scrutinizer/g/kharysharpe/laravel-json-api-resource.svg?style=flat-square)](https://scrutinizer-ci.com/g/kharysharpe/laravel-json-api-resource)
 [![Total Downloads](https://img.shields.io/packagist/dt/kharysharpe/laravel-json-api-resource.svg?style=flat-square)](https://packagist.org/packages/kharysharpe/laravel-json-api-resource)
 
-This is a drop in replacement for Laravel API Resource that produces JSON API response as per specification (https://jsonapi.org/).
+This is potentially a drop in replacement for Laravel API Resource that produces JSON API response as per specification. (https://jsonapi.org/).
 
 ## Installation
 
