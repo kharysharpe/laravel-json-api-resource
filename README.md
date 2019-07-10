@@ -2,7 +2,7 @@
 
 Proof of concept. Needs refactoring and tests, pull requests welcomed.
 
-# Very short description of the package
+# Overview
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/kharysharpe/laravel-json-api-resource.svg?style=flat-square)](https://packagist.org/packages/kharysharpe/laravel-json-api-resource)
 [![Build Status](https://img.shields.io/travis/kharysharpe/laravel-json-api-resource/master.svg?style=flat-square)](https://travis-ci.org/kharysharpe/laravel-json-api-resource)
