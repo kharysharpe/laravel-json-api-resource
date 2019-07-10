@@ -135,6 +135,11 @@ Please see [CONTRIBUTING](CONTRIBUTING.md) for details.
 
 If you discover any security related issues, please email kharysharpe@gmail.com instead of using the issue tracker.
 
+### TODO
+
+- Add credits and/or references
+- Look at using https://github.com/spatie/laravel-json-api-paginate to fix pagination
+
 ## Credits
 
 - [Khary Sharpe](https://github.com/kharysharpe)
