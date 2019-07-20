@@ -2,6 +2,10 @@
 
 All notable changes to `laravel-json-api-resource` will be documented in this file
 
+## 0.1.4 - 2019-07-20
+
+- Fixed includes issue to make it JSON API compliant
+
 ## 0.1.3 - 2019-07-20
 
 - Collection no longer requires a defined {Model}Resource fallback to Resource if none specified
