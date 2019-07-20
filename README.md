@@ -1,7 +1,3 @@
-# Proof of concept
-
-Proof of concept. Needs refactoring and tests, pull requests welcomed.
-
 # Overview
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/kharysharpe/laravel-json-api-resource.svg?style=flat-square)](https://packagist.org/packages/kharysharpe/laravel-json-api-resource)
@@ -10,6 +6,8 @@ Proof of concept. Needs refactoring and tests, pull requests welcomed.
 [![Total Downloads](https://img.shields.io/packagist/dt/kharysharpe/laravel-json-api-resource.svg?style=flat-square)](https://packagist.org/packages/kharysharpe/laravel-json-api-resource)
 
 This is potentially a drop in replacement for Laravel API Resource that produces JSON API response as per specification. (https://jsonapi.org/).
+
+\* Needs refactoring and tests, pull requests welcomed.
 
 ## Installation
 
@@ -42,6 +40,36 @@ Route::get('/users/{id}', 'UserController@show');
 ```
 
 app/Http/Controllers/UserController.php
+
+```php
+<?php
+
+namespace App\Http\Controllers;
+
+use App\User;
+
+use Kharysharpe\LaravelJsonApiResource\Http\Resource\JsonApi\Resource;
+use Kharysharpe\LaravelJsonApiResource\Http\Resource\JsonApi\ResourceCollection;
+
+class UserController extends Controller
+{
+    public function index()
+    {
+        $user = User::all();
+
+        return new ResourceCollection($user);
+    }
+
+    public function show($id)
+    {
+        $user = User::find($id);
+
+        return new Resource($user);
+    }
+}
+```
+
+# OR
 
 ```php
 <?php
@@ -96,7 +124,7 @@ use Kharysharpe\LaravelJsonApiResource\Http\Resource\JsonApi\ResourceCollection;
 
 class UserCollection extends ResourceCollection
 {
-    protected $resourceItemClass = UserResource::class;
+
 }
 ```
 
