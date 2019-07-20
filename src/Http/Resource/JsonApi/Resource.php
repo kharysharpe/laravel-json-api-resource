@@ -31,7 +31,9 @@ class Resource extends LaravelResource
     {
         $with = [];
 
-        $with['included'] = $this->when($this->hasIncludes(), $this->getIncudedResources());
+        if ($this->hasIncludes()) {
+            $with['included'] =  $this->getIncudedResources();
+        }
 
         if (isset($this->route)) {
             $with['links'] = [
