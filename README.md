@@ -47,6 +47,36 @@ app/Http/Controllers/UserController.php
 namespace App\Http\Controllers;
 
 use App\User;
+
+use Kharysharpe\LaravelJsonApiResource\Http\Resource\JsonApi\Resource;
+use Kharysharpe\LaravelJsonApiResource\Http\Resource\JsonApi\ResourceCollection;
+
+class UserController extends Controller
+{
+    public function index()
+    {
+        $user = User::all();
+
+        return new ResourceCollection($user);
+    }
+
+    public function show($id)
+    {
+        $user = User::find($id);
+
+        return new Resource($user);
+    }
+}
+```
+
+# OR
+
+```php
+<?php
+
+namespace App\Http\Controllers;
+
+use App\User;
 use App\Http\Resource\UserCollection;
 use App\Http\Resource\UserResource;
 
