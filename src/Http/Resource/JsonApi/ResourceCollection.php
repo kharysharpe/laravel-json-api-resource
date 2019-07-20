@@ -57,13 +57,13 @@ class ResourceCollection extends JsonResourceCollection
         //Let's guess
         $class = get_class($this);
 
-        $class = substr_replace($class, 'Item', -10);
+        $class = substr_replace($class, '', -10);
 
         if (class_exists($class)) {
             return $class;
         }
 
-        throw(new \Exception("ResourceItemClass not set, tried $class but didn't find it. Did you name it correctly?"));
+        return Resource::class;
     }
 
     public function include(array $relations)
